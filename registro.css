@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Quando";
+  src: url("recursos/Quando-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Judson";
+  src: url("recursos/Judson-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  min-width: 1366px;
+  max-width: 2048px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 12fr;
+  min-height: 90vh;
+  align-content: center;
+  justify-items: center;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 32px;
+}
+
+#cuadricula {
+  display: grid;
+  width: 100%;
+}
+
+h2 {
+  padding: 0.5em;
+  font-family: "Judson";
+  text-align: center;
+}
+
+h4 {
+  font-family: "Quando";
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  padding: 0.5em;
+  font-family: "Judson";
+}
+
+span {
+  font-family: "Quando";
+  font-size: smaller;
+}
+
+.cuadricula-contenedor {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  margin-bottom: 2em;
+}
+
+hr {
+  height: 8px;
+  background-color: red;
+  background-image: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  border: 0;
+  height: 1px;
+}
+
+fieldset {
+  border: 1px #ef4765 solid;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  padding: 0;
+}
+
+@keyframes cambio-comentarios {
+  0% {
+    margin-left: 0;
+  }
+  45% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-logo {
+  background-image: url(recursos/rainbow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 50px;
+  width: 50px;
+  filter: blur();
+  margin: 0.5em;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.item-logo:hover {
+  filter: none;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.3);
+}
+
+.item-texto {
+  align-items: baseline;
+}
+
+.texto-cabecera,
+.texto-cabecera-registro {
+  color: black;
+  font-family: "Quando";
+  font-weight: bold;
+}
+
+.texto-cabecera:hover {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.texto-footer {
+  text-align: center;
+  font-family: "Quando";
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Judson";
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Quando";
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Quando";
+  font-weight: bold;
+}
+
+b {
+  font-weight: 1000;
+  font-family: "Quando";
+}
+
+img {
+  display: block;
+  filter: grayscale();
+  margin: auto;
+  max-height: 2em;
+  max-width: 2em;
+}
+
+svg {
+  transition: 0.3s;
+  transform: scale(1);
+  padding: 5px;
+}
+
+svg:hover {
+  transition: 0.3s;
+  transform: scale(2);
+}
+
+.iconoSVG {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.div-boton-header {
+  display: flex;
+  justify-content: center;
+}
+
+.boton-header {
+  -webkit-user-select: none;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  border-radius: 12px;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Quando";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.boton-header:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.boton-header:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.contenedor-registro {
+  background-color: white;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 1em;
+}
+
+.boton-registro {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+}
+
+.boton-borrado {
+  background: linear-gradient(to bottom right, #a29898, #f5d3bf);
+}
+
+.boton-registro,
+.boton-borrado {
+  -webkit-user-select: none;
+  border-radius: 12px;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Quando";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  margin: 1em;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.boton-registro:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.boton-registro:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.boton-borrado:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem #a29898,
+    0.125rem 0.125rem 1rem #f5d3bf;
+}
+
+.boton-borrado:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem #a29898,
+    0.125rem 0.125rem 1rem #f5d3bf;
+}
+
+.imagen-registro {
+  background: url("recursos/imagen-registro.jpg") center center
+    no-repeat;
+  filter: grayscale();
+}
+
+input[type="text"] {
+  width: 80%;
+}
+
+input[type="text"],
+input[type="radio"],
+input[type="checkbox"] {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin-left: 2em;
+}
+
+label > h4 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+}
+
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+[type="radio"]:checked + img {
+  filter: unset;
+}
+
+[type="checkbox"] + img {
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + img {
+  filter: unset;
+}
+
+.div-radio {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  justify-items: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  main, fieldset {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: auto;
+  }
+
+  .contenedor-registro {
+    width: 90%;
+    min-width: 90%;
+  }
+  .item-texto,
+  .div-boton-header {
+    margin: 1em;
+  }
+
+  .imagen-registro {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  main, fieldset {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: auto;
+  }
+
+  .contenedor-registro {
+    width: 90%;
+    min-width: 90%;
+  }
+  .item-texto,
+  .div-boton-header {
+    margin: 1em;
+  }
+
+  .imagen-registro {
+    display: none;
+  }
+}
